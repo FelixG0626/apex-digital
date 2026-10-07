@@ -25,3 +25,7 @@ Use a GitHub-connected Node or Docker host with HTTPS and a persistent disk. Git
 Configure `NODE_ENV=production`, `APP_URL` to the exact public HTTPS origin, and `DATA_DIR` to the persistent disk mount (Docker: `/app/data`). Configure `ADMIN_USERNAME` and a private `ADMIN_PASSWORD` of at least 16 characters before first start. The admin password is hashed onto the persistent disk, and changing the environment value afterward does not reset an existing account. Production does not write a plaintext credentials file. The host must forward its assigned `PORT` and terminate TLS. Health endpoint: `/health`. Run one server instance; file storage and sessions are not shared between instances. Restarts sign the admin out.
 
 Do not commit credentials, workspace data, or local environment files. No local admin credentials or client records are included in deployment files. Online workspace starts empty; transfer a backup only if desired after signing in.
+
+Public homepage: https://felixg0626.github.io/apex-digital/
+Source repository: https://github.com/FelixG0626/apex-digital
+
