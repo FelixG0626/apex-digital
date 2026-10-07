@@ -1,0 +1,10 @@
+*.log
+*.pid
+node_modules/
+
+/data/
+.env
+.env.*
+!.env.example
+*.jpg
+/dist/

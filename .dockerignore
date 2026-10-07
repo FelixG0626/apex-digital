@@ -1,0 +1,7 @@
+.git
+data
+*.log
+*.pid
+*.jpg
+.env*
+node_modules

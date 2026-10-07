@@ -1,0 +1,10 @@
+import {mkdir,readFile,writeFile,copyFile} from 'node:fs/promises';
+const root=new URL('./',import.meta.url),out=new URL('dist/',root);
+await mkdir(out,{recursive:true});
+let html=await readFile(new URL('public/home.html',root),'utf8');
+html=html.replaceAll('href="/"','href="./"').replace('href="/home.css"','href="./home.css"').replace('src="/home.js"','src="./home.js"');
+html=html.replace('<a href="/admin">Admin login</a>','<span>Agency workspace is private</span>');
+await writeFile(new URL('index.html',out),html);
+for(const name of ['home.css','home.js'])await copyFile(new URL(`public/${name}`,root),new URL(name,out));
+await writeFile(new URL('.nojekyll',out),'');
+console.log('Built public homepage only. Admin code and records are excluded.');
